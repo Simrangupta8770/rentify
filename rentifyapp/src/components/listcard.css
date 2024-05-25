@@ -1,0 +1,66 @@
+/* ListCard.css */
+
+.listing-card {
+    position:relative;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 300px;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .listing-card .card-buttons {
+    margin-bottom: 10px;
+  }
+  
+  .listing-card .card-buttons button {
+    margin-right: 10px;
+  }
+  
+  .listing-card p {
+    margin: 5px 0;
+    border-top: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .listing-card p:first-child {
+    border-top: none;
+  }
+  
+  .listing-card p:last-child {
+    border-bottom: none;
+  }
+  
+  .listing-card p strong {
+    font-weight: bold;
+  }
+  .img{
+    width:100%;
+    height:300px;
+    object-fit: contain;
+  }
+  .img img{
+    width:100%;
+    height:100%;
+  }
+ 
+  
+  .card-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+  }
+  
+  .listing-card:hover .card-btn {
+    visibility: visible;
+  }
+  
