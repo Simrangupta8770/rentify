@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import './App.css'
 const App = () => {
   const navigate=useNavigate();
   useEffect(()=>{
     if(localStorage.getItem('token')){
-      navigate('/listings');
+      // navigate('/listings');
     }
   },[])
   return(

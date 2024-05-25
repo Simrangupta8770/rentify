@@ -10,9 +10,11 @@ const Listings = () => {
   const [maxPrice, setMaxPrice] = useState('');
   const [minBedrooms, setMinBedrooms] = useState('');
   const [maxBedrooms, setMaxBedrooms] = useState('');
+  const [loading,setLoading]=useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
+    setLoading(true);
     const fetchListings = async () => {
       const token = localStorage.getItem('token');
       if (!token) {
@@ -24,6 +26,7 @@ const Listings = () => {
           headers: { Authorization: `Bearer ${token}` }
         });
         setListings(response.data);
+        setLoading(false);
       } catch (error) {
         console.error('Failed to fetch listings:', error);
       }
@@ -32,9 +35,11 @@ const Listings = () => {
   }, []);
 
   useEffect(() => {
+   
     // Filter listings based on filter options
     const filtered = listings.filter(listing => {
       if (minPrice && listing.price < minPrice) {
+        
         return false;
       }
       if (maxPrice && listing.price > maxPrice) {
@@ -69,9 +74,13 @@ const Listings = () => {
       </div>
       </div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" ,flexWrap:"wrap"}}>
-        {filteredListings.map(listing => (
+        {loading? <>
+        Loading...
+        </>:<>{filteredListings.map(listing => (
           <ListCard key={listing._id} listing={listing} edit={false} />
+        
         ))}
+        </>}
       </div>
     </div>
   );

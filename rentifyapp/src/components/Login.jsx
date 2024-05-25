@@ -19,7 +19,7 @@ const Login = () => {
         email, password, firstName, lastName, phoneNumber 
       });
       localStorage.setItem('token', response.data.token);
-      navigate('/listings');
+      navigate('/');
     } catch (error) {
       console.error('Login failed:', error);
     }
@@ -31,7 +31,7 @@ const Login = () => {
         email, password, firstName, lastName, phoneNumber 
       });
       localStorage.setItem('token', response.data.token);
-      navigate('/listings');
+      navigate('/');
     } catch (error) {
       console.error('Login failed:', error);
     }

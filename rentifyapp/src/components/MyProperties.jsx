@@ -19,7 +19,7 @@ const MyProperties = () => {
   });
   const navigate = useNavigate();
   const [listings, setListings] = useState([]);
-  
+  const [loading,setLoading]=useState(false);
   const fetchListings = async () => {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -32,12 +32,15 @@ const MyProperties = () => {
       });
       console.log(response);
       setListings(response.data);
+      
     } catch (error) {
       console.error('Failed to fetch listings:', error);
+    }finally{
+      setLoading(false);
     }
   };
   useEffect(() => {
-   
+   setLoading(true);
     fetchListings();
   }, []);
 
@@ -55,6 +58,7 @@ const MyProperties = () => {
       });
       // Close the modal after successfully adding property
       setShowModal(false);
+      fetchListings();
       // Redirect or perform any action after adding property
       // navigate('/listings');
     } catch (error) {
@@ -126,9 +130,12 @@ const MyProperties = () => {
 <div>
 
 <div style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}}>
-        {listings.map((listing) => (
+        {loading? <>
+        Loading...
+        </>:<>{listings.map((listing) => (
          <ListCard listing={listing} edit={true} fetchListings={fetchListings}/>
         ))}
+        </>}
       </div>
 </div>
       

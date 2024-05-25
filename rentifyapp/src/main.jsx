@@ -15,14 +15,20 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
     <Routes>
    
-    <Route path="/" element={<LandingPage />}>
-        <Route path="listings" element={<Listings />} />
+   {<><Route path="/" element={<LandingPage />}>
+        <Route path="/" element={<Listings />} />
         <Route path="notify" element={<Notification />} />
         <Route path="my-properties" element={<MyProperties />} />
       </Route>
-      <Route path="/login" element={<Login />} />
+     
+      </> 
+      }
+       <Route path="/login" element={<Login />} />
+       {/* <Route path="/" element={<Login />} /> */}
+       
+     
     
-      <Route path="/" element={<App />} />
+      
    
     </Routes>
   </Router>
