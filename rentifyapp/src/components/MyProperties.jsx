@@ -27,7 +27,7 @@ const MyProperties = () => {
       return;
     }
     try {
-      const response = await axios.get('http://localhost:3000/listings', {
+      const response = await axios.get('https://rentify-kumt.onrender.com/listings', {
         headers: { Authorization: `Bearer ${token}` }
       });
       console.log(response);
@@ -50,7 +50,7 @@ const MyProperties = () => {
     }
     try {
         console.log(formData);
-      await axios.post('http://localhost:3000/listings', formData, {
+      await axios.post('https://rentify-kumt.onrender.com/listings', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Close the modal after successfully adding property

@@ -20,7 +20,7 @@ const Listings = () => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:3000/listings', {
+        const response = await axios.get('https://rentify-kumt.onrender.com/listings', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setListings(response.data);

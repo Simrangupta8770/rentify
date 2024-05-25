@@ -26,7 +26,7 @@ const ListCard = ({ listing, edit,fetchListings}) => {
       return;
     }
     try {
-      await axios.put(`http://localhost:3000/properties/${listing._id}`, formData, {
+      await axios.put(`https://rentify-kumt.onrender.com/properties/${listing._id}`, formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Close the modal after successfully adding property
@@ -52,7 +52,7 @@ const ListCard = ({ listing, edit,fetchListings}) => {
       return;
     }
     try{
-        const res=await axios.delete(`http://localhost:3000/properties/${listing._id}`, {
+        const res=await axios.delete(`https://rentify-kumt.onrender.com/properties/${listing._id}`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           console.log(res);
@@ -83,7 +83,7 @@ fetchListings();
       return;
     }
     try{
-        const res=await axios.post(`http://localhost:3000/sendNotification/${listing._id}`, {},{
+        const res=await axios.post(`https://rentify-kumt.onrender.com/sendNotification/${listing._id}`, {},{
             headers: { Authorization: `Bearer ${token}` }
           });
     }catch(error){

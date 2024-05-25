@@ -15,7 +15,7 @@ const Login = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/register', { 
+      const response = await axios.post('https://rentify-kumt.onrender.com/register', { 
         email, password, firstName, lastName, phoneNumber 
       });
       localStorage.setItem('token', response.data.token);
@@ -27,7 +27,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/login', { 
+      const response = await axios.post('https://rentify-kumt.onrender.com/login', { 
         email, password, firstName, lastName, phoneNumber 
       });
       localStorage.setItem('token', response.data.token);

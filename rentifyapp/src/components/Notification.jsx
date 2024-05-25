@@ -11,7 +11,7 @@ const Notification = () => {
     }
     try {
         // console.log(formData);
-      const res=await axios.get('http://localhost:3000/notification', {
+      const res=await axios.get('https://rentify-kumt.onrender.com/notification', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setNot(res.data);
