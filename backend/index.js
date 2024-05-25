@@ -9,6 +9,7 @@ const Listing = require('./models/Listing');
 const sendEmail = require('./sendMail');
 const Notification = require('./models/Notification');
 // const Booking = require('./models/Booking');
+require('dotenv').config();
 
 const app = express();
 app.use(express.json());
