@@ -90,7 +90,7 @@ const Login = () => {
           </div>
           <button type="submit">Login</button>
         </form>
-        <p> Already have an account <span style={{cursor:"pointer"}} onClick={()=>setLogin(true)}>Login</span></p>
+        <p> Already have an account <span style={{cursor:"pointer",color:"blue",textDecoration:"underline"}} onClick={()=>setLogin(true)}>Login</span></p>
         </>
         :
         <>
@@ -116,7 +116,7 @@ const Login = () => {
           </div>
           <button type="submit">Login</button>
         </form>
-        <p> Do not have an account <a style={{cursor:"pointer"}} onClick={()=>setLogin(false)}>Sign Up</a></p>
+        <p> Do not have an account <a style={{cursor:"pointer",color:"blue",textDecoration:"underline"}} onClick={()=>setLogin(false)}>Sign Up</a></p>
         </>
 }
        
